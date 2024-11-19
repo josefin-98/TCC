@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Tela de Opções</title>
+</head>
+<body>
+    <div class="container">
+        <h1>TELA DE OPÇÕES</h1>
+        <div class="date-time">
+            <span id="date"></span>
+            <span id="time"></span>
+        </div>
+        <div class="options">
+            <a href="http://127.0.0.1:5500/Funcionalidades%20do%20site/Perfil/perfil.html" class="option-button">Perfil</a>
+            <a href="http://127.0.0.1:5500/Funcionalidades%20do%20site/Estoque/estoque.html" class="option-button">Estoque Virtual</a>
+            <a href="http://127.0.0.1:5500/Funcionalidades%20do%20site/Cadastro/cadastro.html" class="option-button">Cadastro de Peças</a>
+            <a href="http://127.0.0.1:5500/Funcionalidades%20do%20site/Saida%20de%20pe%C3%A7as/saida.html" class="option-button">Área de Saída</a>
+        </div>
+    </div>
+
+    <script>
+        // Função para atualizar o dia, a data e a hora
+        function updateDateTime() {
+            const now = new Date();
+            const optionsDate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const optionsTime = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+    
+            document.getElementById('day').textContent = now.toLocaleDateString('pt-BR', { weekday: 'long' });
+            document.getElementById('date').textContent = now.toLocaleDateString('pt-BR', optionsDate);
+            document.getElementById('time').textContent = now.toLocaleTimeString('pt-BR', optionsTime);
+        }
+        // Atualiza a data e a hora a cada segundo
+        setInterval(updateDateTime, 1000);
+        updateDateTime(); // Chama a função uma vez para não esperar 1 segundo
+    </script>
+
+ </body>
+ </html>

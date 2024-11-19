@@ -1,0 +1,61 @@
+/* Reset e estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #00aaff, #0047ab); /* Degradê azul */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #003366; /* Azul escuro */
+}
+
+.date-time {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaçamento entre os botões */
+}
+
+.option-button {
+    display: block;
+    padding: 15px;
+    background: #007bff; /* Azul do botão */
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.2rem;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.option-button:hover {
+    background: #0056b3; /* Azul escuro ao passar o mouse */
+    transform: translateY(-2px); /* Efeito de elevação */
+}

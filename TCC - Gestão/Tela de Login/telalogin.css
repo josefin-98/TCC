@@ -1,0 +1,100 @@
+/* Reset e estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #00aaff, #0047ab); /* Degradê azul */
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Animação de Fade In */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px); /* Move o contêiner para cima */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Retorna à posição original */
+    }
+}
+
+/* Container principal */
+.container {
+    max-width: 400px;
+    width: 90%;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out; /* Animação de entrada */
+}
+
+/* Título */
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #003366; /* Azul escuro */
+}
+
+/* Formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group {
+    position: relative;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    color: #003366; /* Azul escuro */
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+input::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+input:focus {
+    outline: none;
+    border-color: #00aaff; /* Azul claro */
+    background: rgba(255, 255, 255, 1);
+}
+
+/* Botões */
+button {
+    padding: 15px 40px; /* Aumenta o padding para deixar o botão maior */
+    border-radius: 30px;
+    border: none;
+    font-size: 1.2rem; /* Aumenta o tamanho da fonte */
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: #007bff; /* Azul mais forte */
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    background: #0056b3; /* Azul escuro ao passar o mouse */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
