@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Produto</title>
+    <link rel="stylesheet" href="cadastro.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Cadastro de Produto</h1>
+        
+        <form id="product-form">
+            <div class="form-group">
+                <label for="product-name">Nome da Peça</label>
+                <input type="text" id="product-name" name="product-name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="product-id">ID do Produto</label>
+                <input type="text" id="product-id" name="product-id" required>
+            </div>
+
+            <div class="form-group">
+                <label for="company-seller">Empresa que Vendeu</label>
+                <input type="text" id="company-seller" name="company-seller" required>
+            </div>
+
+            <!-- Especificações como uma Tabela -->
+            <div class="form-group">
+                <label>Especificações</label>
+                <table id="specifications-table">
+                    <thead>
+                        <tr>
+                            <th>Especificação</th>
+                            <th>Valor</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="specifications-body">
+                        <tr>
+                            <td><input type="text" name="spec-name[]" placeholder="Peso" required></td>
+                            <td><input type="text" name="spec-value[]" placeholder="Valor" required></td>
+                            <td><button type="button" onclick="removeSpecification(this)">Remover</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button type="button" class="btn-add-spec" onclick="addSpecification()">Adicionar Especificação</button>
+            </div>
+
+            <div class="form-group">
+                <label for="user-responsible">Usuário Responsável</label>
+                <input type="text" id="user-responsible" name="user-responsible" value="Usuário Logado" readonly>
+            </div>
+
+            <div class="form-group">
+                <label for="product-status">Status do Produto</label>
+                <select id="product-status" name="product-status">
+                    <option value="Em Falta">Em Falta</option>
+                    <option value="Em Excesso">Em Excesso</option>
+                    <option value="Coerente">Coerente</option> <!-- Novo status adicionado -->
+                </select>
+            </div>
+
+            <div class="form-buttons">
+                <button type="button" class="btn-save" onclick="saveProduct()">Salvar</button>
+                <button type="button" class="btn-save" onclick="addMore()">Adicionar Mais</button>
+            </div>
+        </form>
+
+        <!-- Botão de Voltar -->
+        <button class="btn-back" onclick="window.history.back()">← Voltar</button>
+
+        <!-- Dados Salvos (exibição após salvar) -->
+        <div id="saved-data" style="display: none; margin-top: 30px;">
+            <h2>Dados Salvos:</h2>
+            <p><strong>Nome da Peça:</strong> <span id="saved-name"></span></p>
+            <p><strong>ID:</strong> <span id="saved-id"></span></p>
+            <p><strong>Empresa que Vendeu:</strong> <span id="saved-seller"></span></p>
+            <p><strong>Especificações:</strong> <span id="saved-specifications"></span></p>
+            <p><strong>Usuário Responsável:</strong> <span id="saved-responsible"></span></p>
+            <p><strong>Status:</strong> <span id="saved-status"></span></p>
+        </div>
+
+        <!-- Lista de Produtos Cadastrados -->
+        <div id="product-list" style="display: none; margin-top: 30px;">
+            <h2>Produtos Cadastrados:</h2>
+            <ul id="product-list-items">
+                <!-- Lista de produtos será populada aqui -->
+            </ul>
+        </div>
+
+        <!-- Modal de Detalhes do Produto -->
+        <div id="product-details-modal" style="display: none;">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal()">×</span>
+                <h2>Detalhes do Produto</h2>
+                <div id="product-details"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="cadastro.js"></script>
+</body>
+</html>

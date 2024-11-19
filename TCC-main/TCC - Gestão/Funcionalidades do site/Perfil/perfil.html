@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel de Usuário</title>
+  <link rel="stylesheet" href="perfil.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Botão para voltar -->
+    <div class="back-button">
+      <a href="/TCC-main/TCC%20-%20Gest%C3%A3o/Tela%20de%20Listagem/teladelistagem.html" id="go-back">← Voltar</a>
+    </div>
+
+    <!-- Perfil do Usuário -->
+    <div class="user-profile">
+      <div class="profile-photo">
+        <img id="user-photo" src="default-profile.png" alt="Foto do Perfil">
+        <input type="file" id="photo-upload" accept="image/*">
+      </div>
+      <div class="user-info">
+        <div class="info-group">
+          <label for="user-name">Nome:</label>
+          <input type="text" id="user-name" placeholder="Seu Nome">
+        </div>
+        <div class="info-group">
+          <label for="user-email">E-mail:</label>
+          <input type="email" id="user-email" placeholder="Seu E-mail">
+        </div>
+        <div class="info-group">
+          <label for="user-id">ID:</label>
+          <input type="text" id="user-id" placeholder="Seu ID">
+        </div>
+      </div>
+      <button id="save-info" class="center-button">Salvar Informações</button>
+    </div>
+
+    <!-- Chat Interno -->
+    <div class="chat-section">
+      <h2>Chat Interno</h2>
+      <div class="chat-box" id="chat-box">
+        <!-- Mensagens irão aparecer aqui -->
+      </div>
+      <div class="chat-input">
+        <input type="text" id="chat-username" placeholder="Seu Nome">
+        <textarea id="chat-message" placeholder="Digite sua mensagem..."></textarea>
+        <button id="send-message">Enviar</button>
+      </div>
+    </div>
+
+    <!-- Alteração de Senha -->
+    <div class="password-section">
+      <h2>Alterar Senha</h2>
+      <label for="new-password">Nova Senha:</label>
+      <input type="password" id="new-password" placeholder="Digite sua nova senha">
+      <button id="save-password" class="center-button">Salvar Senha</button>
+    </div>
+  </div>
+  <script src="perfil.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Login</title>
+    <link rel="stylesheet" href="telalogin.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Bem-vindo!</h1>
+        <form id="loginForm" novalidate onsubmit="handleLogin(event)">
+            <div class="input-group">
+                <input type="text" id="username" placeholder="Usuário" required>
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" placeholder="Senha" required>
+            </div>
+            <button type="submit">Entrar</button>
+        </form>
+        <p class="footer-text">Não tem uma conta? <a href="#">Crie uma aqui</a></p>
+    </div>
+
+
+
+    <script>
+        function handleLogin(event) {
+            event.preventDefault(); // Impede o envio do formulário
+            // Aqui você pode adicionar lógica para validar o usuário e a senha
+            // Se a validação for bem-sucedida, redirecione para o site desejado
+            window.location.href = "../Tela de Listagem/teladelistagem.html"; // Redireciona 
+        }
+
+
+    </script>
+</body>
+</html>

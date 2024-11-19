@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estoque com Localização e Imagem</title>
+  <link rel="stylesheet" href="estoque.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Gerenciador de Estoque</h1>
+
+    <!-- Botão de Voltar -->
+    <button class="btn-back" onclick="window.location.href ='/TCC-main/TCC%20-%20Gest%C3%A3o/Tela%20de%20Listagem/teladelistagem.html';">Voltar para a Página Principal</button>
+
+    <!-- Formulário para adicionar novos itens -->
+    <form id="add-item-form">
+      <div class="form-group">
+        <label for="item-name">Nome do Item:</label>
+        <input type="text" id="item-name" placeholder="Nome do item" required>
+      </div>
+      <div class="form-group">
+        <label for="item-id">ID do Item:</label>
+        <input type="text" id="item-id" placeholder="ID do item" required>
+      </div>
+      <div class="form-group">
+        <label for="item-quantity">Quantidade:</label>
+        <input type="number" id="item-quantity" placeholder="Quantidade" min="1" required>
+      </div>
+      <div class="form-group">
+        <label for="item-location">Localização:</label>
+        <input type="text" id="item-location" placeholder="Onde está o item?" required>
+      </div>
+      <div class="form-group">
+        <label for="item-image">Imagem do Item:</label>
+        <input type="file" id="item-image" accept="image/*" required>
+      </div>
+      <!-- Botão de Salvar -->
+      <button type="submit" class="btn">Adicionar ao Estoque</button>
+      <button type="button" class="btn-save" onclick="saveData()">Salvar Dados</button>
+    </form>
+
+    <!-- Tabela para exibir os itens -->
+    <table id="stock-table">
+      <thead>
+        <tr>
+          <th>Imagem</th>
+          <th>Nome do Item</th>
+          <th>ID</th>
+          <th>Quantidade</th>
+          <th>Localização</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Linhas serão geradas dinamicamente aqui -->
+      </tbody>
+    </table>
+  </div>
+
+  <script src="estoque.js"></script>
+</body>
+</html>

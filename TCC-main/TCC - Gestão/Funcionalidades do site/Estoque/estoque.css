@@ -1,0 +1,197 @@
+/* styles.css */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #c8e7f4, #ffffff); /* Fundo com gradiente suave em tons de azul */
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+h1 {
+    text-align: center;
+    color: #2a7db5;
+    margin-bottom: 40px;
+    font-size: 32px;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    flex: 1;
+    min-width: 250px; /* Ajustado para ter menos largura */
+    padding: 15px;
+    margin-bottom: 25px;
+    background-color: #f6f9fc;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 8px;
+    color: #2a7db5;
+    font-size: 16px;
+}
+
+input[type="text"], input[type="number"], input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #8ac9f1;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #fff;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, input[type="file"]:focus {
+    border-color: #2a7db5;
+    outline: none;
+    box-shadow: 0 0 5px rgba(42, 125, 181, 0.2);
+}
+
+/* Botão de Voltar (Seta) */
+.btn-back {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: none;
+    border: none;
+    font-size: 18px; /* Ajustado para um tamanho mais adequado */
+    color: #2a7db5;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease, opacity 0.3s ease;
+    z-index: 10;
+}
+
+.btn-back::before {
+    content: '\2190'; /* Seta para a esquerda (Unicode) */
+    font-size: 28px; /* Ajustado para tamanho adequado */
+    color: #2a7db5;
+}
+
+.btn-back:hover {
+    color: #1c5e8b;
+    transform: scale(1.2);
+    opacity: 0.8;
+}
+
+.btn-back:active {
+    transform: scale(0.95);
+    opacity: 1;
+}
+
+/* Animação de "pulo" suave ao passar o mouse */
+@keyframes bounce {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-8px); }
+    50% { transform: translateX(8px); }
+    75% { transform: translateX(-4px); }
+    100% { transform: translateX(0); }
+}
+
+.btn-back:hover {
+    animation: bounce 0.4s ease-out;
+}
+
+/* Botões principais */
+button {
+    background: #2a7db5;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease-in-out;
+    margin-top: 25px;
+}
+
+button:hover {
+    background: #1c5e8b;
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.btn-save {
+    background: #4CAF50; /* Verde para o botão de salvar */
+}
+
+.btn-save:hover {
+    background: #45a049;
+}
+
+button[type="submit"] {
+    width: 180px;
+}
+
+button[type="button"].btn-save {
+    width: 180px;
+    margin-left: 15px;
+}
+
+/* Tabela de Estoque */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 40px;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background: #e6f1f8;
+    color: #2a7db5;
+}
+
+tr:hover {
+    background: #f3faff;
+}
+
+td img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.action-btn {
+    background: #ff4d4d;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    font-size: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease-in-out;
+}
+
+.action-btn:hover {
+    background: #d93636;
+    transform: scale(1.05);
+}
+
+.action-btn:active {
+    transform: scale(0.98);
+}
